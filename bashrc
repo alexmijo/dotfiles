@@ -143,3 +143,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Needed to get git filter-repo to work
+export PATH="${HOME}/.local/bin:${PATH}"
