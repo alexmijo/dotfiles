@@ -146,3 +146,7 @@ fi
 
 # Needed to get git filter-repo to work
 export PATH="${HOME}/.local/bin:${PATH}"
+
+# Attempting to get programs to use vscode as the default text editor
+export EDITOR="code"
+export VISUAL="code"
