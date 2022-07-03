@@ -3,3 +3,10 @@
 	name = Alex Moreno
 [core]
 	editor = code -w
+[credential]
+	helper = store
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
