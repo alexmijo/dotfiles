@@ -60,13 +60,23 @@ if [ "$color_prompt" = yes ]; then
     RED='\[\e[0;31m\]'
     WHITE='\[\e[0;37m\]'
     DARKGREY='\[\e[1;30m\]'
+    BLUE="\[\e[1;34m\]"
     DEFAULTCOLOR='\[\e[0m\]'
 
     PROMPT_COMMAND=alexs_prompt
 
+    # Determine active Python virtualenv details.
+    function set_virtualenv () {
+        if test -z "$VIRTUAL_ENV" ; then
+            PYTHON_VIRTUALENV=""
+        else
+            PYTHON_VIRTUALENV="${DARKGREY}[`basename \"$VIRTUAL_ENV\"`]${DEFAULTCOLOR}"
+        fi
+    }
+
     function alexs_prompt
     {
-         if [[ "$?" == "0" ]]
+        if [[ "$?" == "0" ]]
         then
             # Don't display an exclamation mark if the previous program had a good exit code
             EXCL=""
@@ -74,6 +84,8 @@ if [ "$color_prompt" = yes ]; then
             # Display an exclamation mark if the previous program had a bad exit code
             EXCL="${RED}!"
         fi
+
+        set_virtualenv
 
         if [[ "$HOSTNAME" == "R90REXNA" && "$USER" == "alexmijo" ]]
         then
@@ -84,7 +96,7 @@ if [ "$color_prompt" = yes ]; then
             OUH="${WHITE}\u@\h"
         fi
 
-        PS1="${debian_chroot:+($debian_chroot)}${OUH}${RED}\w${WHITE}>${EXCL}${DARKGREY}>${DEFAULTCOLOR} "
+        PS1="${debian_chroot:+($debian_chroot)}${PYTHON_VIRTUALENV}${OUH}${RED}\w${WHITE}>${EXCL}${DARKGREY}>${DEFAULTCOLOR} "
     }
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
