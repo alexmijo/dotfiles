@@ -162,3 +162,6 @@ export PATH="${HOME}/.local/bin:${PATH}"
 # Attempting to get programs to use vscode as the default text editor
 export EDITOR="code"
 export VISUAL="code"
+
+# Don't make that annoying noise
+bind 'set bell-style none'
