@@ -1,3 +1,5 @@
 alias gl='git log --all --graph --decorate --oneline'
 alias gs='git status'
 alias cda='cd /mnt/c/Users/Administrator/'
+alias lsa='ls -alh'
+alias gfgp='git fetch; git pull'
