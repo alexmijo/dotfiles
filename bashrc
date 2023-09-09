@@ -87,7 +87,7 @@ if [ "$color_prompt" = yes ]; then
 
         set_virtualenv
 
-        if [[ "$HOSTNAME" == "R90REXNA" && "$USER" == "alexmijo" ]]
+        if [[ "$HOSTNAME" == "LAPTOP-QF6P1UQK" && "$USER" == "alexmijo" ]]
         then
             # Don't display my username and hostname if it's the usual ones
             OUH=""
