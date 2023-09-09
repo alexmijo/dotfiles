@@ -1,3 +1,5 @@
 alias gl='git log --all --graph --decorate --oneline'
 alias gs='git status'
 alias cda='cd /mnt/c/Users/Administrator/'
+alias perf='/usr/lib/linux-tools/5.4.0-126-generic/perf'
+alias sperf='sudo /usr/lib/linux-tools/5.4.0-126-generic/perf'
